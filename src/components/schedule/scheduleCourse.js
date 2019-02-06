@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 
 
+
 class ScheduleCourse extends Component {
     render() {
         return (
