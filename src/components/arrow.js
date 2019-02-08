@@ -11,10 +11,10 @@ class Arrow extends Component {
         
         this.props.callback(this.state.status)
         if(this.state.status) {
-            // close it
+            
             document.getElementById(this.id).classList.remove('arrow-closed');
         } else {
-            // open it
+          
             document.getElementById(this.id).classList.add('arrow-closed');
         }
 
