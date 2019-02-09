@@ -13,7 +13,6 @@ class ProgressTracker extends Component {
                 <div className="progress-tracker__percentage">
                     {this.calculateProgress()}%
                 </div>
-
             </div>
         )
     }

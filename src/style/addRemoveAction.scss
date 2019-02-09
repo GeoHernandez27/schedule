@@ -7,12 +7,14 @@
     border-radius: 16px;
     position: relative;
 }
+
 .action {
     &:after,
     &:before {
         content: '';
         display: block;
         background-color: white;
+
         position: absolute;
         top: 50%;
         left: 50%;
@@ -25,6 +27,7 @@
         height: 1em;
         width: 0.2em;
     }
+
     &:after {
         height: 0.2em;
         width: 1em;

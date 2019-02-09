@@ -1,22 +1,21 @@
 .schedule-course {
     display: grid;
-    grid-template-columns:  [title-s] 1fr [action-s] 32px [action-e space-s] 12px [space-e title-e];
-    grid-template-rows: 1;
+    grid-template-columns: [title-s] 1fr [action-s] 32px [action-e space-s] 12px [space-e title-e];
+    grid-template-rows: 1fr;
 
     justify-items: center;
     align-items: center;
-    
 
     &__title {
         grid-column: title-s/title-e;
         grid-row: 1/2;
-
     }
 
     &__action {
         grid-column: action-s/action-e;
         grid-row: 1/2;
     }
+
 }
 
 .schedule-course {
