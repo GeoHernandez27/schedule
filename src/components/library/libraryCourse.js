@@ -14,37 +14,30 @@ class LibraryCourse extends Component {
         super(props);
 
         this.state = {
-            status:true
+            status:true,
+            height: 0
         };
     }
 
-    renderDescription = function() {
-        if (!this.state.status) {
-          
-          return (
-            <div className="library-course__description">
-              <label>Course Description</label>
-              <p>{this.props.description}</p>
-            </div>
-          )
-        } 
-    }.bind(this);
+
 
     handleCallback = function(status) {
+        let height = this.state.height == 0 ? 80 : 0;
         if(!status) {
-            document.getElementById('library-course').classList.add('library-course-selected');
+            document.getElementById(this.id).classList.add('library-course-selected');
         } else {
-            document.getElementById('library-course').classList.remove('library-course-selected');
+            document.getElementById(this.id).classList.remove('library-course-selected');
         }
         this.setState({ 
-            status
+            status,
+            height
          });
     }.bind(this);
 
     render() {
-        //this.id = `library-course-${this.props.id}`;
+        this.id = `library-course-${this.props.id}`;
         return (
-            <div id="library-course" className="library-course">
+            <div id={this.id} className="library-course">
                 <div className="library-course__title-check">
                     <label className="library-course__title">{this.props.title}</label>
                     { Icon("fas fa-check", "library-course__icon") }
@@ -63,8 +56,8 @@ class LibraryCourse extends Component {
                     onClick={() => this.props.toggleEnrolled(this.props.id)} 
                     className="library-course__action"
                 />
-                {this.renderDescription()}
-                {/* <AnimateHeight
+                
+                <AnimateHeight
                     duration={300}
                     height={this.state.height}
                 >
@@ -72,7 +65,7 @@ class LibraryCourse extends Component {
                             <label>Course Description</label>
                             <p>{this.props.description}</p>
                         </div>
-                    </AnimateHeight> */}
+                    </AnimateHeight> 
             </div>
         );
     }
